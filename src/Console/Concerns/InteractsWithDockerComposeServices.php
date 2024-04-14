@@ -33,6 +33,12 @@ trait InteractsWithDockerComposeServices
      */
     protected $defaultServices = ['mysql', 'redis', 'selenium', 'mailpit'];
 
+    public function __construct() {
+        parent::__construct();
+
+        $this->components = $this->components ?? $this;
+    }
+
     /**
      * Gather the desired Sail services using an interactive prompt.
      *
@@ -42,9 +48,9 @@ trait InteractsWithDockerComposeServices
     {
         if (function_exists('\Laravel\Prompts\multiselect')) {
             return \Laravel\Prompts\multiselect(
-                label: 'Which services would you like to install?',
-                options: $this->services,
-                default: ['mysql'],
+                'Which services would you like to install?',
+                $this->services,
+                ['mysql']
             );
         }
 

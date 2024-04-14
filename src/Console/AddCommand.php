@@ -4,9 +4,7 @@ namespace Laravel\Sail\Console;
 
 use Illuminate\Console\Command;
 use Laravel\Sail\Console\Concerns\InteractsWithDockerComposeServices;
-use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'sail:add')]
 class AddCommand extends Command
 {
     use InteractsWithDockerComposeServices;
@@ -30,7 +28,7 @@ class AddCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return int|null
+     * @return int|void
      */
     public function handle()
     {

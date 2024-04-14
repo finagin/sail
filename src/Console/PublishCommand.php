@@ -3,9 +3,7 @@
 namespace Laravel\Sail\Console;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'sail:publish')]
 class PublishCommand extends Command
 {
     /**
@@ -40,6 +38,10 @@ class PublishCommand extends Command
                     './vendor/laravel/sail/runtimes/8.2',
                     './vendor/laravel/sail/runtimes/8.1',
                     './vendor/laravel/sail/runtimes/8.0',
+                    './vendor/laravel/sail/runtimes/7.4',
+                    './vendor/laravel/sail/runtimes/7.3',
+                    './vendor/laravel/sail/runtimes/7.2',
+                    './vendor/laravel/sail/runtimes/7.1',
                     './vendor/laravel/sail/database/mysql',
                     './vendor/laravel/sail/database/pgsql'
                 ],
@@ -48,6 +50,10 @@ class PublishCommand extends Command
                     './docker/8.2',
                     './docker/8.1',
                     './docker/8.0',
+                    './docker/7.4',
+                    './docker/7.3',
+                    './docker/7.2',
+                    './docker/7.1',
                     './docker/mysql',
                     './docker/pgsql'
                 ],

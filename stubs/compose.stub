@@ -20,8 +20,12 @@ services:
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
+            - '${SAIL_COMPOSER_VOLUME:-sail-composer}:/home/${APP_USER:-sail}/.config/composer'
         networks:
             - sail
 networks:
     sail:
         driver: bridge
+volumes:
+    sail-composer:
+        driver: local
